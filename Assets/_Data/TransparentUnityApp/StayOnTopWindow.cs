@@ -7,7 +7,7 @@ namespace NTPackage.TransparentUnityApp
 {
     public class StayOnTopWindow : MonoBehaviour
     {
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
         [DllImport("user32.dll")]
         private static extern IntPtr GetActiveWindow();
 
@@ -35,7 +35,7 @@ namespace NTPackage.TransparentUnityApp
 
         public void SetAlwaysOnTop(bool value)
         {
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
             IntPtr hWnd = GetActiveWindow();
 
             if (value)

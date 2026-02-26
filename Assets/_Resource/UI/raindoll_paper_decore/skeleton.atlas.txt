@@ -1,0 +1,34 @@
+
+skeleton.png
+size: 222,162
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bottom_tie_1
+  rotate: false
+  xy: 177, 23
+  size: 8, 25
+  orig: 8, 25
+  offset: 0, 0
+  index: -1
+bottom_tie_2
+  rotate: false
+  xy: 177, 50
+  size: 39, 48
+  orig: 39, 48
+  offset: 0, 0
+  index: -1
+raindoll_paper
+  rotate: false
+  xy: 2, 2
+  size: 173, 158
+  orig: 173, 158
+  offset: 0, 0
+  index: -1
+upper_tie
+  rotate: false
+  xy: 177, 100
+  size: 43, 60
+  orig: 43, 64
+  offset: 0, 3
+  index: -1

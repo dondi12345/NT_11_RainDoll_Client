@@ -6,7 +6,7 @@ namespace NTPackage.TransparentUnityApp
 {
     public class ClickthroughWindow : MonoBehaviour
     {
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
 
         [DllImport("user32.dll")]
         static extern IntPtr GetActiveWindow();
@@ -33,7 +33,7 @@ namespace NTPackage.TransparentUnityApp
 
         public void SetClickthrough(bool enable)
         {
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
             IntPtr hwnd = GetActiveWindow();
             uint style = GetWindowLong(hwnd, GWL_EXSTYLE);
 

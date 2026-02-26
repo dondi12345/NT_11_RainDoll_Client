@@ -6,7 +6,7 @@ namespace NTPackage.TransparentUnityApp
 {
     public class TransparentWindow : MonoBehaviour
     {
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
 
         [DllImport("user32.dll")]
         static extern IntPtr GetActiveWindow();
@@ -36,7 +36,7 @@ namespace NTPackage.TransparentUnityApp
 
         public void SetTransparent(bool value)
         {
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
             IntPtr hwnd = GetActiveWindow();
             uint style = GetWindowLong(hwnd, GWL_EXSTYLE);
 
