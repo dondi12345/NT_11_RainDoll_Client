@@ -7,7 +7,6 @@ namespace NTPackage.UI
     public class LoadingUI : PopupUI
     {
         public SkeletonGraphic SkeletonGraphic;
-        public CanvasGroup CanvasGroup;
         public Transform Panel;
 
         [SerializeField] Animator animator;
@@ -20,19 +19,26 @@ namespace NTPackage.UI
         Coroutine uiRoutine;
 
         [ContextMenu("OnUI")]
-        public override void OnUI(object data = null)
-        {
-            if (uiRoutine != null)
-                StopCoroutine(uiRoutine);
-            uiRoutine = StartCoroutine(OnUICoroutine());
+        public void TestOnUI(){
+            this.OnUI();
         }
 
         [ContextMenu("OffUI")]
-        public override void OffUI()
-        {
+        public void TestOffUI(){
+            this.OffUI();
+        }
+
+        public override void Show(){
+            base.Show();
+             if (uiRoutine != null)
+                StopCoroutine(uiRoutine);
+            if(this.animator.gameObject.activeSelf) uiRoutine = StartCoroutine(OnUICoroutine());
+        }
+
+        public override void Hide(){
             if (uiRoutine != null)
                 StopCoroutine(uiRoutine);
-            uiRoutine = StartCoroutine(OffUICoroutine());
+            if(this.animator.gameObject.activeSelf) uiRoutine = StartCoroutine(OffUICoroutine());
         }
 
         IEnumerator OnUICoroutine()
