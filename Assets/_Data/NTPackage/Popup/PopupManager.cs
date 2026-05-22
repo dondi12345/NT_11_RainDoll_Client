@@ -13,7 +13,7 @@ namespace NTPackage.UI
         // public ListTransformAddressable PopupTransAddressable;
         // public ListTransformAddressable HUDPopupAddressable;
         public float currentLvUI = 0;
-        public NTDictionary<PopupCode, PopupUI> PopupDic = new NTDictionary<PopupCode, PopupUI>();
+        public NTDictionary<string, PopupUI> PopupDic = new NTDictionary<string, PopupUI>();
         public List<PopupUI> LsPopupUIOn = new List<PopupUI>();
 
         public static PopupManager Instance;
@@ -24,7 +24,7 @@ namespace NTPackage.UI
             base.Awake();
             if (PopupManager.Instance != null) Debug.LogWarning("Only 1 UIManager allow");
             PopupManager.Instance = this;
-            this.PopupDic = new NTDictionary<PopupCode, PopupUI>();
+            this.PopupDic = new NTDictionary<string, PopupUI>();
         }
 
         public override void LoadComponents()
@@ -92,12 +92,12 @@ namespace NTPackage.UI
             }
         }
 
-        public PopupUI GetPopupUIByCode(PopupCode popupCode)
+        public PopupUI GetPopupUIByCode(string popupCode)
         {
             return this.PopupDic.Get(popupCode);
         }
 
-        public void OnUI(PopupCode popupCode, object data = null, Action<PopupUI> action = null)
+        public void OnUI(string popupCode, object data = null, Action<PopupUI> action = null)
         {
 
            try
@@ -113,7 +113,7 @@ namespace NTPackage.UI
                 NTPackage.Functions.NTLog.LogError(popupCode + ":" + e.ToString(), gameObject);
             }
         }
-        public void OffUI(PopupCode popupCode)
+        public void OffUI(string popupCode)
         {
             try
             {
@@ -125,7 +125,7 @@ namespace NTPackage.UI
                 NTPackage.Functions.NTLog.LogError(popupCode + ":" + e.ToString(), gameObject);
             }
         }
-        public void UpdateDataUI(PopupCode popupCode, object data = null)
+        public void UpdateDataUI(string popupCode, object data = null)
         {
             try
             {
@@ -165,7 +165,7 @@ namespace NTPackage.UI
 
         }
 
-        public PopupUI GetPopupUI(PopupCode popupCode)
+        public PopupUI GetPopupUI(string popupCode)
         {
             return this.PopupDic.Get(popupCode);
         }

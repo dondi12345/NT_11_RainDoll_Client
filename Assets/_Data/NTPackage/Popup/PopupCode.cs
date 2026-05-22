@@ -1,61 +1,45 @@
-using System;
-using UnityEngine;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace NTPackage.UI
 {
-    public class PopupCodeParser
+    public static class PopupCode
     {
-        public static PopupCode FromString(string name)
-        {
-            //name = name.ToLower();W
-            return (PopupCode)Enum.Parse(typeof(PopupCode), name);
-        }
+        public const string Unknown = "Unknown";
+        public const string LoadingUI = "LoadingUI";
+        public const string SplashUI = "SplashUI";
+        public const string MessagePanel = "MessagePanel";
     }
 
-    [System.Serializable]
-    public enum PopupCode
+    public static class PopupCodeParser
     {
-        Unknown = 0,
-        LoadingUI,
-        NameChangeUI,
-        AvatarChangeUI,
-        ChangeSkinPlayerUI,
-        ChatUI,
-        Emoji_Popup,
-        FriendUI,
-        RestaurantSellFoodUI,
-        MessageOptionPanel,
-        GiftCodeUI,
-        RewardDataUI,
-        ItemDataDetailUI,
-        UserDataShortUI,
-        InventoryUI,
-        MessagePanel,
-        DailyRewardPopupUI,
-        LanguagePopup,
-        SettingPopup,
-        PlayerMailUI,
-        PlayerMailInfoUI,
-        ChangeBaseCharacterClothUI,
-        ChoseCharacterUI,
-        InviteGameRoomUI,
-        MercaLandPotListPopupUI,
-        MercaShopOrderPopupUI,
-        MercaLandPotBuildShopPopupUI,
-        LoginPanel,
-        RegisterPanel,
-        BannerTopUI,
-        PlayerChestUI,
-        PlayerChestSelectUI,
-        Popup_Login,
-        TapToStart,
-        UnboxingUI,
-        BlindBagClassificationUI,
-        FriendInvitePopupUI,
-        CollectedItemsUI,
-        ItemInventoryPopupUI,
-        MessageOptionAdvPanel,
-        ToolTipUI,
-        PackageIAPPopupUI,
+        private static readonly HashSet<string> ValidCodes = BuildValidCodes();
+
+        public static string FromString(string name)
+        {
+            if (string.IsNullOrEmpty(name)) return PopupCode.Unknown;
+            return ValidCodes.Contains(name) ? name : PopupCode.Unknown;
+        }
+
+        public static bool IsValid(string name)
+        {
+            return !string.IsNullOrEmpty(name) && ValidCodes.Contains(name);
+        }
+
+        private static HashSet<string> BuildValidCodes()
+        {
+            var codes = new HashSet<string>();
+            var fields = typeof(PopupCode).GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+            foreach (var field in fields)
+            {
+                if (!field.IsLiteral || field.IsInitOnly) continue;
+                if (field.FieldType != typeof(string)) continue;
+                if (field.Name == nameof(PopupCode.Unknown)) continue;
+
+                var value = field.GetValue(null) as string;
+                if (!string.IsNullOrEmpty(value)) codes.Add(value);
+            }
+            return codes;
+        }
     }
 }

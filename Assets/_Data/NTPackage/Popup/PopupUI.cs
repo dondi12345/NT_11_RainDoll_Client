@@ -22,7 +22,7 @@ namespace NTPackage.UI
 
     public class PopupUI : NTBehaviour
     {
-        public PopupCode popupCode = PopupCode.Unknown;
+        public string popupCode = PopupCode.Unknown;
         public Transform transPanel;
 
         public KindPopup show = KindPopup.none;
@@ -54,24 +54,28 @@ namespace NTPackage.UI
         {
             base.LoadComponents();
             this.LoadTransPanel();
-            this.popupCode = PopupCodeParser.FromString(transform.name);
+            this.popupCode = transform.name;
         }
 
         protected void LoadTransPanel()
         {
-            if (this.transPanel != null) return;
+            if (this.transPanel != null){
+                NTLog.LogMessage("TransPanel already loaded: " + this.transPanel.name);
+                return;
+            }
             try
             {
                 this.transPanel = transform.Find("Panel");
+                NTLog.LogMessage("LoadTransPanel: " + this.transPanel.name);
             }
             catch (System.Exception)
             {
-                Debug.LogWarning("Can't LoadImageItem");
+                Debug.LogWarning("Can't LoadPanel");
             }
 
         }
-        //Function
         protected override void Start()
+        //Function
         {
             base.Start();
             PopupManager.Instance.PopupDic.Add(this.popupCode, this);

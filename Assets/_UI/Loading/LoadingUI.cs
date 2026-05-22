@@ -1,8 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using Spine.Unity;
+using NTPackage.UI;
 
-namespace NTPackage.UI
+namespace RainDoll.LoadingUI
 {
     public class LoadingUI : PopupUI
     {
