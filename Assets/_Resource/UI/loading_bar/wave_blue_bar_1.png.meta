@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e058c36704e0554398814ea5d3135d7
+guid: 53514d4b1bde6334184c4c26cfd2fcae
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -11,9 +11,6 @@ TextureImporter:
   - first:
       213: 4872929353823885882
     second: wave_blue_bar_2
-  - first:
-      213: -7973619207485980908
-    second: wave_blue_bar_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,12 +136,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 408
-        width: 409
-        height: 120
+        y: 203
+        width: 205
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 100, y: 0, z: 100, w: 0}
+      border: {x: 50, y: 0, z: 50, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -161,12 +158,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 272
-        width: 409
-        height: 120
+        y: 136
+        width: 205
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 90, y: 0, z: 90, w: 0}
+      border: {x: 46, y: 0, z: 49, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -183,18 +180,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 136
-        width: 409
-        height: 120
+        y: 69
+        width: 205
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 90, y: 0, z: 250, w: 0}
+      border: {x: 50, y: 0, z: 100, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1b8e5d389079be64c8119e216be88e1e
+      spriteID: a3a1f3eed6f10a340800000000000000
       internalID: 4872929353823885882
       vertices: []
       indices: 
@@ -205,19 +202,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 409
-        height: 120
+        y: 2
+        width: 205
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 100, y: 0, z: 100, w: 0}
+      border: {x: 50, y: 0, z: 50, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5332c62d4ce6b504ca7f7b444bed1282
-      internalID: -7973619207485980908
+      spriteID: 7263fbbb519b6014f856f67981b010a0
+      internalID: 1406435805
       vertices: []
       indices: 
       edges: []
@@ -226,7 +223,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: dc347564fc855c34cbc039953eb0ced6
+    spriteID: ff0926df592b4214bb0a4125bf39278d
     internalID: 0
     vertices: []
     indices: 
@@ -236,12 +233,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":4.0},"gridSpriteSize":{"x":409.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":16.0},"gridSpritePadding":{"x":0.0,"y":16.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":4.0},"gridSpriteSize":{"x":205.0,"y":62.0},"gridSpriteOffset":{"x":0.0,"y":5.0},"gridSpritePadding":{"x":0.0,"y":5.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       wave_blue_bar_0: 6184456495980251076
       wave_blue_bar_1: -1572708692136834972
       wave_blue_bar_2: 4872929353823885882
-      wave_blue_bar_3: -7973619207485980908
+      wave_blue_bar_3: 1406435805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

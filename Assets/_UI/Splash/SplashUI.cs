@@ -29,19 +29,18 @@ namespace RainDoll.SplashUI
             this.SkeletonGraphic.AnimationState.SetAnimation(0, "start", false);
             this.SkeletonGraphic.AnimationState.AddAnimation(0, "show", false, 0);
             // this.SkeletonGraphic.AnimationState.AddAnimation(0, "idle", false, 0);
-            this.SkeletonGraphic.AnimationState.AddAnimation(0, "end", false, 0);
-            this.SkeletonGraphic.AnimationState.AddAnimation(0, "idle_end", true, 0);
+            this.SkeletonGraphic.AnimationState.AddAnimation(0, "end", true, 0);
             if(this.Coroutine != null) StopCoroutine(this.Coroutine);
             this.StartCoroutine(this.ShowSliderCoroutine());
         }
 
         public IEnumerator ShowSliderCoroutine(){
             //Wait for the animation to do idle_end
-            yield return new WaitUntil(() => this.SkeletonGraphic.AnimationState.GetCurrent(0).Animation.Name == "idle_end");
+            yield return new WaitUntil(() => this.SkeletonGraphic.AnimationState.GetCurrent(0).Animation.Name == "end");
             this.Slider.gameObject.SetActive(true);
             this.Slider.OnUI();
             this.Slider.SetValue(0);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.2f); 
             this.Slider.SetValue(0.2f);
             yield return new WaitForSeconds(0.2f);
             this.Slider.SetValue(0.4f);
