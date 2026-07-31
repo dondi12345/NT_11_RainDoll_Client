@@ -13,34 +13,34 @@ namespace NTPackage.TransparentUnityApp
 
         void Update()
         {
-            // if (Input.GetKeyDown(KeyCode.T))
-            // {
-            //     TransparentWindowEnabled = !TransparentWindowEnabled;
-            //     TransparentWindow.SetTransparent(TransparentWindowEnabled);
-            // }
-            // if (Input.GetKeyDown(KeyCode.C))
-            // {
-            //     ClickthroughWindowEnabled = !ClickthroughWindowEnabled;
-            //     ClickthroughWindow.ClickthroughEnabled = ClickthroughWindowEnabled;
-            //     ClickthroughWindow.SetClickthrough(ClickthroughWindowEnabled);
-            // }
-            // if (Input.GetKeyDown(KeyCode.S))
-            // {
-            //     StayOnTopWindowEnabled = !StayOnTopWindowEnabled;
-            //     StayOnTopWindow.SetAlwaysOnTop(StayOnTopWindowEnabled);
-            // }
-            // if(Input.GetKeyDown(KeyCode.F))
-            // {
-            //     Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-            // }
-            // if(Input.GetKeyDown(KeyCode.G))
-            // {
-            //     Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
-            // }
-            // if(Input.GetKeyDown(KeyCode.H))
-            // {
-            //     Screen.fullScreenMode = FullScreenMode.Windowed;
-            // }
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                TransparentWindowEnabled = !TransparentWindowEnabled;
+                TransparentWindow.SetTransparent(TransparentWindowEnabled);
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                ClickthroughWindowEnabled = !ClickthroughWindowEnabled;
+                ClickthroughWindow.ClickthroughEnabled = ClickthroughWindowEnabled;
+                ClickthroughWindow.SetClickthrough(ClickthroughWindowEnabled);
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                StayOnTopWindowEnabled = !StayOnTopWindowEnabled;
+                StayOnTopWindow.SetAlwaysOnTop(StayOnTopWindowEnabled);
+            }
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+            }
+            if(Input.GetKeyDown(KeyCode.G))
+            {
+                Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
+            }
+            if(Input.GetKeyDown(KeyCode.H))
+            {
+                Screen.fullScreenMode = FullScreenMode.Windowed;
+            }
         }
     }
 }

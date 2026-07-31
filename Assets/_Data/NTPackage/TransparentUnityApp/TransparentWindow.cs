@@ -37,9 +37,6 @@ namespace NTPackage.TransparentUnityApp
         const uint WS_EX_LAYERED = 0x00080000;
         const uint WS_EX_TRANSPARENT = 0x00000020;
 
-        const uint LWA_COLORKEY = 0x00000001;
-        const uint LWA_ALPHA = 0x00000002;
-
         IntPtr hwnd;
 #endif
 
@@ -55,19 +52,20 @@ namespace NTPackage.TransparentUnityApp
         {
 #if UNITY_STANDALONE_WIN && !UNITY_EDITOR
             uint style = GetWindowLong(hwnd, GWL_EXSTYLE);
+            Camera.main.clearFlags = CameraClearFlags.SolidColor;
+            Camera.main.backgroundColor = new Color(0f, 0f, 0f, 0f);
 
             if (value){
                 MARGINS margins = new MARGINS() { cxLeftWidth = -1 };
                 DwmExtendFrameIntoClientArea(hwnd, ref margins);
                 style |= WS_EX_LAYERED;
                 SetWindowLong(hwnd, GWL_EXSTYLE, style | WS_EX_LAYERED);
-                // SetLayeredWindowAttributes(hwnd, 0, 0, LWA_COLORKEY);
             }else{
                 // Remove layered + transparent flags
-                // style &= ~WS_EX_LAYERED;
-                // style &= ~WS_EX_TRANSPARENT;
+                style &= ~WS_EX_LAYERED;
+                style &= ~WS_EX_TRANSPARENT;
 
-                // SetWindowLong(hwnd, GWL_EXSTYLE, style);
+                SetWindowLong(hwnd, GWL_EXSTYLE, style);
             }
 #endif
         }
