@@ -1388,6 +1388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 111290606}
+  - component: {fileID: 111290607}
   m_Layer: 0
   m_Name: FarLayer
   m_TagString: Untagged
@@ -1413,6 +1414,18 @@ Transform:
   - {fileID: 553033338}
   m_Father: {fileID: 525494546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &111290607
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111290605}
+  m_Enabled: 1
+  m_SortingLayerID: -1714283591
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &113123622
 GameObject:
   m_ObjectHideFlags: 0
@@ -7177,6 +7190,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &637644987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637644988}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &637644988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637644987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &646349922
 GameObject:
   m_ObjectHideFlags: 0
@@ -7389,7 +7433,7 @@ GameObject:
   - component: {fileID: 665250638}
   - component: {fileID: 665250639}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: GroundSuface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7422,9 +7466,9 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665250637}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: 2012315071
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!1 &671867855
 GameObject:
@@ -21172,6 +21216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1881300703}
   - component: {fileID: 1881300702}
+  - component: {fileID: 1881300704}
   m_Layer: 0
   m_Name: GenerateEarth
   m_TagString: Untagged
@@ -21259,6 +21304,18 @@ Transform:
   - {fileID: 366375852}
   m_Father: {fileID: 525494546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1881300704
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881300701}
+  m_Enabled: 1
+  m_SortingLayerID: 1461888061
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &1886793807
 GameObject:
   m_ObjectHideFlags: 0
@@ -24155,3 +24212,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 412161205}
   - {fileID: 525494546}
+  - {fileID: 637644988}

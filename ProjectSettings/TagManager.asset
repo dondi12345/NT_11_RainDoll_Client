@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -41,3 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Underground
+    uniqueID: 1461888061
+    locked: 0
+  - name: Sky
+    uniqueID: 2580683705
+    locked: 0
+  - name: Ground
+    uniqueID: 2132102593
+    locked: 0
+  - name: GroundSurface
+    uniqueID: 2012315071
+    locked: 0
+  m_RenderingLayers:
+  - Default
