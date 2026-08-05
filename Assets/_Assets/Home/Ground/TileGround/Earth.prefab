@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8334207489501462703, guid: 092eb52e426e04d46a6b1d3c85961064, type: 3}
       propertyPath: m_Name
-      value: TileGround Variant
+      value: Earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 8808189364307955046, guid: 092eb52e426e04d46a6b1d3c85961064, type: 3}
+      propertyPath: GridObjectType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
