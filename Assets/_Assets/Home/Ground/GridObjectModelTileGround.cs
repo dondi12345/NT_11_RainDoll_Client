@@ -4,29 +4,11 @@ namespace NT.RainDoll.Ground
 {
     public class GridObjectModelTileGround : GridObjectModel
     {
-        public Transform Con_1;
-        public Transform Con_inv_1;
-        public Transform Inner_1;
-        public Transform Hor_1;
-        public Transform Ver_1;
+        public SpriteRenderer Sprite_1;
+        public SpriteRenderer Sprite_2;
+        public SpriteRenderer Sprite_3;
+        public SpriteRenderer Sprite_4;
 
-        public Transform Con_2;
-        public Transform Con_inv_2;
-        public Transform Inner_2;
-        public Transform Hor_2;
-        public Transform Ver_2;
-
-        public Transform Con_3;
-        public Transform Con_inv_3;
-        public Transform Inner_3;
-        public Transform Hor_3;
-        public Transform Ver_3;
-
-        public Transform Con_4;
-        public Transform Con_inv_4;
-        public Transform Inner_4;
-        public Transform Hor_4;
-        public Transform Ver_4;
 
         public override void UpdateData()
         {
@@ -99,50 +81,29 @@ namespace NT.RainDoll.Ground
                 }
             }
 
-            this.Con_1.gameObject.SetActive(false);
-            this.Con_inv_1.gameObject.SetActive(false);
-            this.Inner_1.gameObject.SetActive(false);
-            this.Hor_1.gameObject.SetActive(false);
-            this.Ver_1.gameObject.SetActive(false);
+                if (top && right && top_right) this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[4];
+                else if (top && right && !top_right) this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[1];
+                else if (top && !right) this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[2];
+                else if (!top && right) this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[3];
+                else this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[0];
 
-            if(top && right && top_right) this.Inner_1.gameObject.SetActive(true);
-            else if(top && right && !top_right) this.Con_inv_1.gameObject.SetActive(true);
-            else if(top && !right) this.Ver_1.gameObject.SetActive(true);
-            else if(!top && right) this.Hor_1.gameObject.SetActive(true);
+                if (top && left && top_left) this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[4];
+                else if (top && left && !top_left) this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[1];
+                else if (top && !left) this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[2];
+                else if (!top && left) this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[3];
+                else this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[0];
 
-            this.Con_2.gameObject.SetActive(false);
-            this.Con_inv_2.gameObject.SetActive(false);
-            this.Inner_2.gameObject.SetActive(false);
-            this.Hor_2.gameObject.SetActive(false);
-            this.Ver_2.gameObject.SetActive(false);
+                if (bottom && left && bottom_left) this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[4];
+                else if (bottom && left && !bottom_left) this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[1];
+                else if (bottom && !left) this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[2];
+                else if (!bottom && left) this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[3];
+                else this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[0];
 
-            if(top && left && top_left) this.Inner_2.gameObject.SetActive(true);
-            else if(top && left && !top_left) this.Con_inv_2.gameObject.SetActive(true);
-            else if(top && !left) this.Ver_2.gameObject.SetActive(true);
-            else if(!top && left) this.Hor_2.gameObject.SetActive(true);
-
-            this.Con_3.gameObject.SetActive(false);
-            this.Con_inv_3.gameObject.SetActive(false);
-            this.Inner_3.gameObject.SetActive(false);
-            this.Hor_3.gameObject.SetActive(false);
-            this.Ver_3.gameObject.SetActive(false);
-
-            if(bottom && left && bottom_left) this.Inner_3.gameObject.SetActive(true);
-            else if(bottom && left && !bottom_left) this.Con_inv_3.gameObject.SetActive(true);
-            else if(bottom && !left) this.Ver_3.gameObject.SetActive(true);
-            else if(!bottom && left) this.Hor_3.gameObject.SetActive(true);
-
-            this.Con_4.gameObject.SetActive(false);
-            this.Con_inv_4.gameObject.SetActive(false);
-            this.Inner_4.gameObject.SetActive(false);
-            this.Hor_4.gameObject.SetActive(false);
-            this.Ver_4.gameObject.SetActive(false);
-
-            if(bottom && right && bottom_right) this.Inner_4.gameObject.SetActive(true);
-            else if(bottom && right && !bottom_right) this.Con_inv_4.gameObject.SetActive(true);
-            else if(bottom && !right) this.Ver_4.gameObject.SetActive(true);
-            else if(!bottom && right) this.Hor_4.gameObject.SetActive(true);
-
+                if (bottom && right && bottom_right) this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[4];
+                else if (bottom && right && !bottom_right) this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[1];
+                else if (bottom && !right) this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[2];
+                else if (!bottom && right) this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[3];
+                else this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[0];
         }
     }
 }

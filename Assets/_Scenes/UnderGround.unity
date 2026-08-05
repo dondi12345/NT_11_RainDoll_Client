@@ -18177,6 +18177,12 @@ MonoBehaviour:
   GridObjectModelDictionary:
     Keys: 
     Values: []
+  GridObjectModelSprites:
+  - {fileID: 21300000, guid: f8e380237b5eb9646bb723e5d76d7ee6, type: 3}
+  - {fileID: 21300000, guid: 0ba564a88b49bf347baa0a89e54ebd61, type: 3}
+  - {fileID: 21300000, guid: d299a54b731da734b8a491ea627af2bc, type: 3}
+  - {fileID: 21300000, guid: b9087c88804ee654db6ae3f4e0094b02, type: 3}
+  - {fileID: 21300000, guid: 7c55503dac32b0f479ab9868c6e2a6b0, type: 3}
 --- !u!4 &1518675416
 Transform:
   m_ObjectHideFlags: 0
