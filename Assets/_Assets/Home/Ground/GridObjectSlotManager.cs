@@ -14,6 +14,7 @@ namespace NT.RainDoll.Ground
         public int Width;
         public int Height;
         public float GridSize;
+        public float GridYOffset = -0.63f;
 
         public static GridObjectSlotManager Instance;
         protected override void Awake()
@@ -39,19 +40,19 @@ namespace NT.RainDoll.Ground
                         GridObjectSlot gridObjectSlotMiddle = GameObject.Instantiate(this.GridObjectSlotPrefab, this.GridObjectSlotHolder);
                         gridObjectSlotMiddle.x = x;
                         gridObjectSlotMiddle.y = -y;
-                        gridObjectSlotMiddle.transform.position = new Vector3(x * this.GridSize, -y * this.GridSize, 0);
+                        gridObjectSlotMiddle.transform.position = new Vector3(x * this.GridSize, -y * this.GridSize + this.GridYOffset, 0);
                         this.GridObjectSlots.Add(gridObjectSlotMiddle.GetKey(), gridObjectSlotMiddle);
                     }else{   
                         GridObjectSlot gridObjectSlotLeft = GameObject.Instantiate(this.GridObjectSlotPrefab, this.GridObjectSlotHolder);
                         gridObjectSlotLeft.x = -x;
                         gridObjectSlotLeft.y = -y;
-                        gridObjectSlotLeft.transform.position = new Vector3(-x * this.GridSize, -y * this.GridSize, 0);
+                        gridObjectSlotLeft.transform.position = new Vector3(-x * this.GridSize, -y * this.GridSize + this.GridYOffset, 0);
                         this.GridObjectSlots.Add(gridObjectSlotLeft.GetKey(), gridObjectSlotLeft);
                         
                         GridObjectSlot gridObjectSlotRight = GameObject.Instantiate(this.GridObjectSlotPrefab, this.GridObjectSlotHolder);
                         gridObjectSlotRight.x = x;
                         gridObjectSlotRight.y = -y;
-                        gridObjectSlotRight.transform.position = new Vector3(x * this.GridSize, -y * this.GridSize, 0);
+                        gridObjectSlotRight.transform.position = new Vector3(x * this.GridSize, -y * this.GridSize + this.GridYOffset, 0);
                         this.GridObjectSlots.Add(gridObjectSlotRight.GetKey(), gridObjectSlotRight);
                     }
                 }

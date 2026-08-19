@@ -10,8 +10,6 @@ namespace NT.RainDoll.Ground
         public List<GridObjectModel> GridObjectModels;
         public NTDictionary<GridObjectType, GridObjectModel> GridObjectModelDictionary;
 
-        public List<Sprite> GridObjectModelSprites;
-
         public static GridObjectModelResources Instance;
         protected override void Awake()
         {

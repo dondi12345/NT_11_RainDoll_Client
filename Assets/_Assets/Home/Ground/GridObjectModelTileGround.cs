@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace NT.RainDoll.Ground
@@ -8,6 +9,12 @@ namespace NT.RainDoll.Ground
         public SpriteRenderer Sprite_2;
         public SpriteRenderer Sprite_3;
         public SpriteRenderer Sprite_4;
+
+        public Sprite Conner;
+        public Sprite Corner_Inv;
+        public Sprite Hor;
+        public Sprite Ver;
+        public Sprite Inner;
 
 
         public override void UpdateData()
@@ -81,29 +88,29 @@ namespace NT.RainDoll.Ground
                 }
             }
 
-                if (top && right && top_right) this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[4];
-                else if (top && right && !top_right) this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[1];
-                else if (top && !right) this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[2];
-                else if (!top && right) this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[3];
-                else this.Sprite_1.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[0];
+                if (top && right && top_right) this.Sprite_1.sprite = Inner;
+                else if (top && right && !top_right) this.Sprite_1.sprite = Corner_Inv;
+                else if (top && !right) this.Sprite_1.sprite = Ver;
+                else if (!top && right) this.Sprite_1.sprite = Hor;
+                else this.Sprite_1.sprite = Conner;
 
-                if (top && left && top_left) this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[4];
-                else if (top && left && !top_left) this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[1];
-                else if (top && !left) this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[2];
-                else if (!top && left) this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[3];
-                else this.Sprite_2.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[0];
+                if (top && left && top_left) this.Sprite_2.sprite = Inner;
+                else if (top && left && !top_left) this.Sprite_2.sprite = Corner_Inv;
+                else if (top && !left) this.Sprite_2.sprite = Ver;
+                else if (!top && left) this.Sprite_2.sprite = Hor;
+                else this.Sprite_2.sprite = Conner;
 
-                if (bottom && left && bottom_left) this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[4];
-                else if (bottom && left && !bottom_left) this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[1];
-                else if (bottom && !left) this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[2];
-                else if (!bottom && left) this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[3];
-                else this.Sprite_3.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[0];
+                if (bottom && left && bottom_left) this.Sprite_3.sprite = Inner;
+                else if (bottom && left && !bottom_left) this.Sprite_3.sprite = Corner_Inv;
+                else if (bottom && !left) this.Sprite_3.sprite = Ver;
+                else if (!bottom && left) this.Sprite_3.sprite = Hor;
+                else this.Sprite_3.sprite = Conner;
 
-                if (bottom && right && bottom_right) this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[4];
-                else if (bottom && right && !bottom_right) this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[1];
-                else if (bottom && !right) this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[2];
-                else if (!bottom && right) this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[3];
-                else this.Sprite_4.sprite = GridObjectModelResources.Instance.GridObjectModelSprites[0];
+                if (bottom && right && bottom_right) this.Sprite_4.sprite = Inner;
+                else if (bottom && right && !bottom_right) this.Sprite_4.sprite = Corner_Inv;
+                else if (bottom && !right) this.Sprite_4.sprite = Ver;
+                else if (!bottom && right) this.Sprite_4.sprite = Hor;
+                else this.Sprite_4.sprite = Conner;
         }
     }
 }

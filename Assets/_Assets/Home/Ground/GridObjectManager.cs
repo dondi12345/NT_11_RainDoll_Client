@@ -27,11 +27,11 @@ namespace NT.RainDoll.Ground
         }
 
         public void LoadData(){
-            this.GenerateGridObjects();
+            this.GenerateGridObjectDatas();
         }
 
         [NTButton]
-        public void GenerateGridObjects()
+        public void GenerateGridObjectDatas()
         {
             this.GridObjectDatas = new NTDictionary<string, GridObjectData>();
             for(int y = 0; y < this.Height; y++){
@@ -56,6 +56,13 @@ namespace NT.RainDoll.Ground
                     }
                 }
             }
+            foreach (UserGridObject userGridObject in UserGridObjectManager.Instance.UserGridObjects){
+                GridObjectData gridObjectData = new GridObjectData();
+                gridObjectData.x = userGridObject.x;
+                gridObjectData.y = userGridObject.y;
+                gridObjectData.Type = userGridObject.Type;
+                this.GridObjectDatas.Add(gridObjectData.GetKey(), gridObjectData);
+            }
         }
 
         [NTButton]
@@ -68,6 +75,9 @@ namespace NT.RainDoll.Ground
             }
             this.GridObjects = new NTDictionary<string, GridObject>();
             foreach (GridObjectData gridObjectData in this.GridObjectDatas.ToList()){
+                if(gridObjectData.Type == GridObjectType.Empty){
+                    continue;
+                }
                 GridObject gridObject = Instantiate(this.GridObjectPrefab, this.GridObjectHolder);
                 gridObject.Data = gridObjectData;
                 gridObject.UpdateData();

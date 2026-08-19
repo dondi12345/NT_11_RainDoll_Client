@@ -19,6 +19,7 @@ namespace NT.RainDoll.Home
         }
 
         public void LoadData(){
+            UserGridObjectManager.Instance.LoadData();
             GridObjectSlotManager.Instance.LoadData();
             GridObjectManager.Instance.LoadData();
         }
